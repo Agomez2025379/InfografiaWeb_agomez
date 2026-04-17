@@ -10,4 +10,9 @@ public class HomeController {
     public String index() {
         return "index";
     }
+
+    @GetMapping({"/index-zawarudo", "/zawarudo", "/zawa"})
+    public String indexZawarudo() {
+        return "index-zawarudo";
+    }
 }

@@ -87,3 +87,38 @@ function bwColor() {
 
 // ejecucion del ciclo principal
 requestAnimationFrame(animate);
+
+(function () {
+    const btn = document.getElementById('zawarudo-button');
+    if (!btn) return;
+
+    function spawnPulse() {
+        const rect = btn.getBoundingClientRect();
+        const x = rect.left + rect.width / 2 + (Math.random() - 0.5) * 8;
+        const y = rect.top  + rect.height / 2 + (Math.random() - 0.5) * 8;
+
+        const dot = document.createElement('div');
+        dot.className = 'zw-pulse';
+        dot.style.left = x + 'px';
+        dot.style.top  = y + 'px';
+        document.body.appendChild(dot);
+
+        let start = null;
+        function animate(ts) {
+            if (!start) start = ts;
+            const p = (ts - start) / 900;   // duración: 900ms
+            if (p >= 1) { dot.remove(); return; }
+            const ease = p < 0.4 ? p / 0.4 : 1 - (p - 0.4) / 0.6;
+            dot.style.opacity = ease * 0.8;
+            dot.style.transform = `translate(-50%, -50%) scale(${1 + p * 4})`;
+            requestAnimationFrame(animate);
+        }
+        requestAnimationFrame(animate);
+    }
+
+    setInterval(spawnPulse, 1000);   // pulso cada 3 seg
+
+    btn.addEventListener('click', () => {
+        window.location.href = '/index-zawarudo';
+    });
+})();

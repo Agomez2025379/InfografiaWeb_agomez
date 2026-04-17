@@ -133,4 +133,31 @@ a {
      margin-top: 15px;
  }
 code { font-family: 'fira code', monospace; }
-.text-info p { margin-bottom: 15px; font-size: 0.95em; }
+.text-info p { margin-bottom: 15px; font-size: 0.95em;
+}
+
+#zawarudo-button {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;       /* ajusta la posición donde quieras */
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 999;
+    padding: 0;
+    outline: none;
+}
+
+.zw-pulse {
+    position: fixed;
+    border-radius: 50%;
+    background: #ffd300;
+    width: 6px;
+    height: 6px;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 998;
+    transform: translate(-50%, -50%);
+}
