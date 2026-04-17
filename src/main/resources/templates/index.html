@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Infografía Desarrollo Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- el css mid colegio btw -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<!-- canvas para fondo bonito -->
+<canvas id="demo"></canvas>
+
+<div class="content">
+
+    <header>
+        <h1>Desarrollo Web Moderno</h1>
+        <p>Infografía sobre el desarrollo web moderno y sus usos</p>
+        <a th:href="'https://github.com/Agomez2025379'" rel="author noopener noreferrer" target="_blank">Por Agomez2025379 (rayocrac)</a>
+    </header>
+
+    <section>
+        <div class="text-info">
+            <h2>1. HTML V5</h2>
+            <ul>
+                <li><strong>definicion:</strong> lenguaje de marcado para la estructuracion de documentos web.</li>
+                <li><strong>semantica:</strong> utiliza etiquetas con significado funcional (nav, main, aside).</li>
+                <li><strong>accesibilidad:</strong> estandariza la lectura para tecnologias asistivas.</li>
+            </ul>
+            <div class="code-example">
+                <h3>Ejemplo HTML5:</h3>
+                <pre><code>&lt;header&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Título&lt;/h2&gt;
+        &lt;p&gt;Contenido principal&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+    &lt;p&gt;©RAYODEV 2026&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+            </div>
+        </div>
+        <div class="media-placeholder">
+            <img src="/img/html5.png" alt="Esquema de etiquetas semánticas HTML5" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+        </div>
+    </section>
+
+    <section>
+        <div class="text-info">
+            <h2>2. CSS V3</h2>
+            <ul>
+                <li><strong>definicion:</strong> hojas de estilo para la capa de presentacion visual.</li>
+                <li><strong>layout:</strong> implementa sistemas de rejilla como flexbox y grid.</li>
+                <li><strong>rendimiento:</strong> permite animaciones procesadas por gpu.</li>
+            </ul>
+            <div class="code-example">
+                <h3>Ejemplo CSS3:</h3>
+                <pre><code>.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: scale(1.1);
+}</code></pre>
+            </div>
+        </div>
+        <div class="media-placeholder">
+            <img src="/img/css3-square.png" alt="Modelo de caja y alineación CSS3" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+        </div>
+    </section>
+
+    <section>
+        <div class="text-info">
+            <h2>3. BOOTSTRAP </h2>
+            <ul>
+                <li><strong>definicion:</strong> framework css para diseño responsivo prioritario en moviles.</li>
+                <li><strong>grid:</strong> sistema de 12 columnas que organiza el contenido.</li>
+                <li><strong>estandar:</strong> componentes listos para usar basados en flexbox.</li>
+            </ul>
+            <div class="code-example">
+                <h3>Ejemplo Bootstrap:</h3>
+                <pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="card"&gt;
+                &lt;div class="card-body"&gt;
+                    &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+                    &lt;p class="card-text"&gt;Contenido&lt;/p&gt;
+                    &lt;a href="#" class="btn btn-primary"&gt;Botón&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+        <div class="media-placeholder">
+            <img src="/img/Bootstrap.png" alt="Sistema de rejilla responsiva Bootstrap" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+        </div>
+    </section>
+
+    <section>
+        <div class="text-info">
+            <h2>4. JAVASCRIPT </h2>
+            <ul>
+                <li><strong>definicion:</strong> lenguaje de scripting para interactividad en el navegador.</li>
+                <li><strong>dom:</strong> interfaz de programacion para manipular elementos html.</li>
+                <li><strong>eventos:</strong> gestiona clics, desplazamientos y entradas de datos.</li>
+            </ul>
+            <div class="code-example">
+                <h3>Ejemplo JavaScript:</h3>
+                <pre><code>// Seleccionar elemento
+const button = document.querySelector('#myButton');
+
+// Agregar evento click
+button.addEventListener('click', function() {
+    // Cambiar contenido
+    const paragraph = document.querySelector('#myParagraph');
+    paragraph.textContent = '¡Texto cambiado!';
+
+    // Cambiar estilo
+    paragraph.style.color = 'red';
+});</code></pre>
+            </div>
+        </div>
+        <div class="media-placeholder">
+            <img src="/img/javascript.png" alt="Jerarquía del Document Object Model JavaScript" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+        </div>
+    </section>
+
+    <section>
+        <div class="text-info">
+            <h2>5. fetch api</h2>
+            <ul>
+                <li><strong>definicion:</strong> interfaz para solicitudes http asincronas.</li>
+                <li><strong>asincronia:</strong> permite el intercambio de datos sin recargar la pagina.</li>
+                <li><strong>promesas:</strong> gestiona las respuestas exitosas o errores del servidor.</li>
+            </ul>
+            <div class="code-example">
+                <h3>Ejemplo Fetch API:</h3>
+                <pre><code>// Hacer una petición GET
+fetch('https://api.example.com/users')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Datos recibidos:', data);
+        // Procesar los datos
+        displayUsers(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
+// Función async/await
+async function getUsers() {
+    try {
+        const response = await fetch('/api/users');
+        const users = await response.json();
+        return users;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}</code></pre>
+            </div>
+        </div>
+        <div class="media-placeholder">
+            <img src="/img/nodeFetch.png" alt="Flujo de petición y respuesta asíncrona Fetch API" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+        </div>
+    </section>
+
+    <section>
+        <div class="text-info">
+            <h2>6. JSON </h2>
+            <ul>
+                <li><strong>definicion:</strong> formato ligero de texto para representacion de datos.</li>
+                <li><strong>estructura:</strong> pares de clave y valor legibles para humanos y maquinas.</li>
+                <li><strong>intercambio:</strong> el estandar para la comunicacion entre cliente y servidor.</li>
+            </ul>
+            <div class="code-example">
+                <h3>Ejemplo JSON:</h3>
+                <pre><code>// Objeto JSON
+{
+    "usuario": {
+        "id": 123,
+        "nombre": "Juan Pérez",
+        "email": "juan@example.com",
+        "activo": true,
+        "roles": ["admin", "editor"],
+        "perfil": {
+            "edad": 30,
+            "ciudad": "Madrid"
+        }
+    },
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "Producto A",
+            "precio": 29.99
+        },
+        {
+            "id": 2,
+            "nombre": "Producto B",
+            "precio": 49.99
+        }
+    ]
+}
+
+// Parsear JSON en JavaScript
+const jsonString = '{"nombre": "Ana", "edad": 25}';
+const objeto = JSON.parse(jsonString);
+console.log(objeto.nombre); // "Ana"
+
+// Convertir objeto a JSON
+const usuario = { nombre: "Carlos", edad: 35 };
+const json = JSON.stringify(usuario);</code></pre>
+            </div>
+        </div>
+        <div class="media-placeholder">
+            <img src="/img/JSON.png" alt="Estructura de objetos de datos JSON" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+        </div>
+    </section>
+
+    <section>
+        <div class="text-info">
+            <h2>7. API REST</h2>
+            <ul>
+                <li><strong>definicion:</strong> arquitectura de servicios web basada en recursos (urls).</li>
+                <li><strong>metodos:</strong> gestion mediante get, post, put y delete.</li>
+                <li><strong>comunicacion:</strong> utiliza http como protocolo de transferencia de estado.</li>
+            </ul>
+            <div class="code-example">
+                <h3>Ejemplo API REST:</h3>
+                <pre><code>// Endpoints RESTful
+GET    /api/users          // Obtener todos los usuarios
+GET    /api/users/123      // Obtener usuario específico
+POST   /api/users          // Crear nuevo usuario
+PUT    /api/users/123      // Actualizar usuario completo
+PATCH  /api/users/123      // Actualizar campos específicos
+DELETE /api/users/123      // Eliminar usuario
+
+// Ejemplo de respuesta JSON
+{
+    "status": "success",
+    "data": {
+        "user": {
+            "id": 123,
+            "name": "Juan Pérez",
+            "email": "juan@example.com"
+        }
+    },
+    "message": "Usuario creado exitosamente"
+}
+
+// Códigos de estado HTTP
+200 OK           // Éxito
+201 Created      // Recurso creado
+400 Bad Request  // Error en la petición
+401 Unauthorized // No autorizado
+404 Not Found    // Recurso no encontrado
+500 Internal Server Error</code></pre>
+            </div>
+        </div>
+        <div class="media-placeholder">
+            <img src="/img/apiRest.png" alt="Interacción cliente-servidor mediante REST" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+        </div>
+    </section>
+
+    <div class="summary-container">
+        <h2>UNION DEL SISTEMA</h2>
+        <div class="summary-grid">
+            <div class="summary-card">
+                <strong>esqueleto y piel:</strong> html5 y css3/bootstrap definen la forma.
+            </div>
+            <div class="summary-card">
+                <strong>cerebro:</strong> javascript controla la logica y las acciones.
+            </div>
+            <div class="summary-card">
+                <strong>mensajeria:</strong> fetch api transporta datos json por la via rest.
+            </div>
+        </div>
+    </div>
+
+<!-- mi javascripti -->
+<script th:src="@{/js/app.js}"></script>
+
+</body>
+</html>
