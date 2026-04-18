@@ -17,12 +17,14 @@ let blobarray = [];
 let colors = ["#AB96DA", "#FFBF00", "#FBD87F", "#E7DDD9"];
 let colorShift = 0;
 
+let animationId;
+
 function animate() {
     draw();
     bwColor();
     // uso de la funcion requestanimationframe para crear un ciclo de animacion eficiente
     // sincronizado con los fps del navegador
-    requestAnimationFrame(animate);
+    animationId = requestAnimationFrame(animate);
 }
 
 function draw() {
@@ -119,6 +121,34 @@ requestAnimationFrame(animate);
     setInterval(spawnPulse, 1000);   // pulso cada 3 seg
 
     btn.addEventListener('click', () => {
-        window.location.href = '/index-zawarudo';
+        const overlay = document.getElementById('zawarudo-overlay');
+        const audio = document.getElementById('zawarudo-audio');
+        const back = document.getElementById('zawarudo-back');
+
+        // ⚡ FLASH BRUTAL (instantáneo)
+        overlay.classList.add('flash');
+
+        // después de un instante → pasa a modo normal
+        setTimeout(() => {
+            overlay.classList.remove('flash');
+            overlay.classList.add('active');
+        }, 120);
+
+        // sonido principal
+        audio.currentTime = 0;
+        audio.play();
+
+        // congelar animación
+        cancelAnimationFrame(animationId);
+
+        // salida
+        setTimeout(() => {
+            back.currentTime = 0;
+            back.play();
+
+            overlay.classList.remove('active');
+
+            requestAnimationFrame(animate);
+        }, 9000);
     });
 })();
